@@ -1,0 +1,92 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "custom-color": #a1f2f5
+);
+
+@function theme-color-level($color-name: "custom-color", $level: 0) {
+    $color: theme-color($color-name);
+    $color-base: if($level > 0, #000, #fff);
+    $level: abs($level);
+  
+    @return mix($color-base, $color, $level * $theme-color-interval);
+  }
+body{
+  background-color: theme-color-level(custom-color, 2);
+}
+.App {
+    background-color: theme-color-level(custom-color, 2);
+    color: theme-color-level(custom-color, 10);
+  }   
+.btnColor{
+    background-color: theme-color-level(custom-color, 2);
+    color: theme-color-level(custom-color, 10);
+}    
+.btnColorCard:hover{
+    background-color: theme-color-level(custom-color, 5);
+}      
+.pagination{
+    background-color: theme-color-level(custom-color, 5);
+    color: theme-color-level(custom-color, 10);
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+} 
+.noneDecorated{
+  color: theme-color-level(custom-color, 10);
+}
+.noneDecorated:hover{
+  text-decoration: none;
+  color: theme-color-level(custom-color, 10);
+}   
+.title{
+  color: theme-color-level(custom-color, -5);
+  position: absolute;
+  margin-left: 70px;
+  padding-bottom: 5px;
+}
+.btnColorSideBar:hover{
+  background-color: theme-color-level(custom-color, 5);
+}
+.pokeCard:hover {
+  border: bold;
+  border-color: black;
+  box-sizing: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+.grow{ 
+  position: absolute;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.PokemonPage{
+  border-color: black;
+  margin-top: 10px;
+  width: 700px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.PokemonImg{
+  width: 300px;
+  height: 300px;
+}
+.PokemonText{
+  position: absolute;
+  color: theme-color-level(custom-color, 10);
+  margin-left: 325px;
+}
+.margin{
+  margin-right: 9px;
+}
+.CaptureText{
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: theme-color-level(custom-color, 10);
+}
