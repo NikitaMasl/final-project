@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { 
-    Link
+    Link, BrowserRouter
  } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { catchPokemon } from '../store/coughtAction';
@@ -23,7 +23,7 @@ class Card extends Component{
             document.getElementById('btn'+this.props.id).classList.remove("btnColorCard");
         }
       }
-    componentWillMount(){
+    UNSAFE_componentWillMount(){
         sessionStorage.clear();
     }
     render(){  
@@ -31,7 +31,7 @@ class Card extends Component{
 
     return(
         <div className="card  justify-content-center pokeCard" style={{width: "304px", height:"470px"}}>
-            <Link to={'/pokemon/'+this.props.id+'/'+this.props.name} className="noneDecorated">          
+            <Link to={'/pokemon/'+this.props.id+'/'+this.props.name} className="noneDecorated spetialForIECard">          
                 <img src={this.imgSrc(this.props.id)} 
                         onError={(e) => {
                             e.target.src = process.env.PUBLIC_URL + '/pokemons/no-photo.png';
@@ -46,7 +46,7 @@ class Card extends Component{
                 }
             </div>
             </Link> 
-            <div className="card-body text-sm-center">
+            <div className="card-body text-sm-center ">
                 <button className="btn btnColor btnColorCard"  id={"btn"+this.props.id} onClick={()=>{
                     let date =new Date();
                     catchPokemon(this.props.id, this.props.name, true, date);

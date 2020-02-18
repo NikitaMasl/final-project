@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Card from './Card';
 import Pagination from './Pagination';
-import { createStore } from 'redux';
 
 const DB = "http://localhost:3001/pokemons";
 

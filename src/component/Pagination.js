@@ -8,7 +8,7 @@ const Pagination = ({ cardsPerPage, totalCards, paginate }) => {
     }
   
     return (
-      <nav>
+      <nav className="spetialForIEPagination">
         <ul className='pagination justify-content-center'>
           {pageNumbers.map(number => (
             <li key={number} className='page-item text-center'>
