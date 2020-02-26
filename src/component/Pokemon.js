@@ -43,7 +43,7 @@ imgSrc = (id) => {
               <h2 className="card-title">Name: {name}</h2>
               <p className="card-text">ID: {id}</p>
               <p className="card-text">{
-                date !== undefined ? 'This pokemon was caught on '+this.formatDate(date) : 'This pokemon has not been caught yet'
+                date ? 'This pokemon was caught on '+this.formatDate(date) : 'This pokemon has not been caught yet'
               }</p>
             </div>
           </div>    

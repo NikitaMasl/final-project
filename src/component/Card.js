@@ -75,5 +75,3 @@ const putActionToProps = (dispatch) => {
 export default connect(putStateProps, putActionToProps)(Card);
 
 
-
-
